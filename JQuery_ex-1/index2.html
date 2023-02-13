@@ -1,0 +1,49 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Affichage message. </title>
+<link href="styles/style1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<h1>En vente ce mois-ci !</h1>
+</header>
+<section>
+<div class="photo"><img src="img/1.jpg" alt="Bristol 1" title="Steam punk monster"/></div>
+<div class="photo"><img src="img/2.jpg" alt="Bristol 2" title="City wolf"/></div>
+<div class="photo"><img src="img/3.jpg" alt="Bristol 3" title="Wave wall"/></div>
+<div class="photo"><img src="img/4.jpg" alt="Bristol 4" title="Revolution"/></div>
+</section>
+<div id="box"> </div>
+
+
+<script src="jquery.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html> 
+<script>
+
+
+$(document).ready(function(){
+$(".photo").click(function(){
+
+$("div > p").remove();
+console.log("click photo");
+texte=$(this).children().attr("title");
+console.log(texte);
+
+prix=Math.floor(100*Math.random()+50);
+    console.log(prix);
+
+$(this).append("<p>" + texte +"</p>" + "<br>" +"<p>"+ prix+ "</p>");
+
+
+
+});
+
+});
+</script>
